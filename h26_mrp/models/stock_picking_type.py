@@ -9,3 +9,8 @@ class StockPickingType(models.Model):
     pack_production = fields.Boolean(string='Packing Production')
     package_type_id = fields.Many2one('stock.package.type',
                                       string='Package Type')
+    backorder_strategy_mo = fields.Selection([
+        ('manual', 'Manual'),
+        ('create', 'Create'),
+        ('no_create', 'No Create')], string="Backorder Strategy MO",
+        default='manual')
