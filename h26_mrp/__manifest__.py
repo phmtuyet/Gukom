@@ -6,8 +6,11 @@
     'category': 'MRP',
     'summary': 'Mrp',
     'depends': [
+            'mrp',
         ],
     'data': [
+        'views/stock_picking_type_views.xml',
+        'views/mrp_production_views.xml',
         ],
     'installable': True,
     'auto_install': False,

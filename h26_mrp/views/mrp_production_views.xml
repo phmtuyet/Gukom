@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="inherit_mrp_production_form_view" model="ir.ui.view">
+        <field name="name">inherit.mrp.production.form.view</field>
+        <field name="model">mrp.production</field>
+        <field name="inherit_id" ref="mrp.mrp_production_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='bom_id']" position="after">
+                <field name="package_id" readonly="1" force_save="1"/>
+            </xpath>
+            <xpath expr="//header" position="inside">
+                <button name="action_print_package_label" type="object"
+                        string="Package Label"
+                        attrs="{'invisible': [('package_id', '=', False)]}"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
