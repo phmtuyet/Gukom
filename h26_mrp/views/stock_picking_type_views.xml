@@ -10,6 +10,8 @@
                 <field name="backorder_strategy_mo"
                        attrs="{'invisible': [('code', '!=', 'mrp_operation')],
                        'required': [('code', '=', 'mrp_operation')]}"/>
+                <field name="stay_on_finished_mo"
+                       attrs="{'invisible': [('code', '!=', 'mrp_operation')]}"/>
                 <field name="pack_production"
                        attrs="{'invisible': [('code', '!=', 'mrp_operation')]}"/>
                 <field name="package_type_id"

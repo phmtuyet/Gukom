@@ -14,3 +14,8 @@ class StockPickingType(models.Model):
         ('create', 'Create'),
         ('no_create', 'No Create')], string="Backorder Strategy MO",
         default='manual')
+    stay_on_finished_mo = fields.Boolean(
+        string='Stay on Finished MO',
+        default=True,
+        help="Stay on Finished MO after create Backorder"
+    )

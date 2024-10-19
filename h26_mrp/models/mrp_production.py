@@ -35,7 +35,9 @@ class MrpProduction(models.Model):
                 if record.picking_type_id.pack_production:
                     record.action_put_in_pack()
         # Denied return BackOrder Form view after created
-        if isinstance(res, dict) and res.get('res_model') == 'mrp.production':
+        if (isinstance(res, dict)
+                and res.get('res_model') == 'mrp.production'
+                and True in self.picking_type_id.mapped('stay_on_finished_mo')):
             return True
         return res
 
